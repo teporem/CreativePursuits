@@ -37,7 +37,7 @@ $(document).ready(function () {
         h3Element.text(name);
         pElement.text(`${number} employed (${percent}% of US Employments)`);
 
-        d3.csv("data/total.csv").then(function(data) {
+        d3.csv("./data/total.csv").then(function(data) {
             data.sort((a, b) => b.percentage - a.percentage);
             const filteredData = data.filter(item => keywords.some(keyword => item.arts.includes(keyword)));
             const detailList = $("#detail-list");
