@@ -1,0 +1,264 @@
+
+*, html, body {
+  margin:  0;
+  padding: 0;
+  
+}
+body {
+  background-color:rgb(243 244 226);
+  height: 100vh;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif; 
+  font-weight: bold;
+}
+
+h3 {
+  color: rgb(242 154 78);
+  text-align: center;
+  padding: 2px;
+}
+p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+
+
+canvas {
+  display: block;
+}
+#top-section {
+  height: 10%;
+  background-color:rgb(237, 124, 124);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1, h2 {
+    margin: 0 15px 0 15px;
+    padding: 0;
+    color: white;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+  }
+}
+
+#bottom-section {
+  height: 5%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 2px;
+  background-color:rgb(255, 199, 102);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    margin: 0 10px 0 10px;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+  }
+}
+
+#wrapper {
+  padding-left: 1em;
+  padding-right: 1em;
+  display: block;
+  height: 85%;
+}
+#left-container, #right-container {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 20%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+#detail {
+  width:90%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  flex-direction: column;
+  padding: 30px 15px 30px 15px;
+  margin: auto;
+  border-radius: 5px;
+  overflow-y: auto;
+  text-align: center;
+}
+.chart-container {
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 100%;
+}
+.cloud-container {
+  width:33%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin: 5px;
+}
+.cloud {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #wrapper {
+    display:flex;
+  }
+  .chart-container {
+    width: 60%;
+    height: 100%;
+  }
+  #left-container, #right-container {
+    width: 20%;
+    height: 100%;
+    display: block;
+  }
+  #detail {
+    width: 40%;
+    height: 90%;
+    display: block;
+  }
+  .cloud-container {
+    width:100%;
+    height:33%;
+  }
+}
+@media (min-width: 1200px) {
+  #wrapper {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+#tooltip {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  pointer-events: none; /* Ensure the tooltip doesn't block mouse events */
+}
+
+.small-text {
+  font-size: 10pt;
+  /*fill: rgb(255, 255, 255);*/
+  /*opacity: 0.5;*/
+}
+
+#title-text{
+  font-size: 46px;
+  /*fill: white;*/
+}
+#subtitle-text{
+  font-size: 20px;
+  /*fill: white;*/
+}
+
+.custom-tip{
+  font-size: 16pt;
+  /*fill: white;*/
+}
+
+.literary {
+  fill:#ed7c7c;
+}
+
+path:hover, object:hover {
+  opacity: 0.5;
+}
+
+.visual {
+  fill:rgb(242 154 78);
+}
+
+.performing {
+  fill:rgb(255 199 102);
+}
+
+#detail-list {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  div {
+    background-color:rgb(243 244 226);
+    padding: 3px;
+    margin: 5px;
+    .rectangle {
+      height: 10px;
+      background-color: #ed7c7c;
+    }
+  }
+}
+
+#info-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  z-index: 2;
+  text-align: center;
+  p {
+    padding: 5px 0;
+    margin: 5px 0;
+  }
+}
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#info {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+  color: rgb(237, 124, 124);
+  font-size: 14px;
+  margin: 5px 10px;
+  padding: 3px 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button {
+  background: none;
+  color: #ed7c7c;
+  text-align: center;
+  margin: 2px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+}
